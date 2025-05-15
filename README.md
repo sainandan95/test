@@ -25,3 +25,11 @@ chmod +x /tmp/service
 export PATH=/tmp:$PATH
 sudo /home/<your-username>/script.sh start
 cat /tmp/path_test
+
+
+sudo /home/enable_histor stop
+echo 'pwd; env' > /tmp/debug.sh
+chmod +x /tmp/debug.sh
+sudo /home/enable_histor start /tmp/debug.sh 2> /tmp/debug_errors.txt
+cat /tmp/debug_errors.txt
+cat /tmp/debug.sh
